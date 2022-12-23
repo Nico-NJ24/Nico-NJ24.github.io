@@ -11,7 +11,6 @@ Class instagram_basic_display_api {
     private $_userAccessToken = '';
     private $_userAccessTokenExpires = '';
 
-    public $authorizationUrl = '';
     public $hasUserAccessToken = false;
     public $userId = '';
 
@@ -32,18 +31,6 @@ Class instagram_basic_display_api {
 
     public function getUserAccessTokenExpires() {
         return $this->_userAccessTokenExpires;
-    }
-
-    private function _setAuthorizationUrl() {
-        $getVars = array(
-            'app_id' => $this->_appId,
-            'redirect_uri' => $this->_redirectUrl,
-            'scope' => 'user_profile,user_media',
-            'response_type' => 'code'
-        );
-
-        // create url
-        $this->authorizationUrl = $this->_apiBaseUrl . 'oauth/authorize?' . http_build_query( $getVars );
     }
 
     private function _setUserInstagramAccessToken( $params ) {
