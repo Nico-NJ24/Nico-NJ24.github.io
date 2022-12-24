@@ -136,7 +136,8 @@
 $link_url = "https://api.instagram.com/oauth/authorize?client_id=1278600299539632&redirect_uri=https://nico-nj24.github.io/&scope=user_profile,user_media&response_type=code";
 $link_text = "Instagram authorization";
 
-echo "<a href='$link_url'>$link_text</a>";
+echo sprintf('<a href="%s">%s</a>', $link_url, $link_text);
+
 
 ?>
 
