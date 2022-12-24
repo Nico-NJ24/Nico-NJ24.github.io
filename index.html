@@ -132,7 +132,13 @@
 		<?php endforeach; ?>
 	</ul>
 <?php else : ?>
-	<a href="<?php echo $ig->authorizationUrl; ?>">
-		Authorize w/Instagram
+
+$link_url = "https://api.instagram.com/oauth/authorize?client_id=1278600299539632&redirect_uri=https://nj24.jimdosite.com/&scope=user_profile,user_media&response_type=code";
+$link_text = "Instagram authorization";
+
+echo "<a href='$link_url'>$link_text</a>";
+
+?>
+
 	</a>
 <?php endif; ?>
